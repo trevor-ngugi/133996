@@ -1,0 +1,3 @@
+name: trevor ngugi
+admission number:133996
+title of project:A Web Based Gum Disease Prediction Using Convolutional Neural Network
