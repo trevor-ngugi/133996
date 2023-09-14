@@ -133,3 +133,10 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+ACCOUNT_SID='ACf83aca049cdfeb17d0004e43fd15387b'
+AUTH_TOKEN='e12336ee45e5c1d636f449bf1799554b'
+COUNTRY_CODE='+254'
+TWILIO_WHATSAPP_NUMBER='whatsapp:+14155238886'
+TWILIO_PHONE_NUMBER='+14787073793'
+
