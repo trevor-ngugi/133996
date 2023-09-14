@@ -1,12 +1,6 @@
-{% load static %}
+{% extends "hello/layout.html" %}
 
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <title>Hello</title>
-        <link rel="stylesheet" href="{% static 'webstyles/styles.css' %}">
-    </head>
-    <body>
+{% block body %}
         <h1>Hello, World!</h1>
-    </body>
-</html>
+
+{% endblock %}
