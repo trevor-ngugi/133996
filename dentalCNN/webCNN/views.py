@@ -80,3 +80,18 @@ def otpVerify(request,uid):
             return HttpResponse("wrong otp")
         return HttpResponse("10 minutes passed")        
     return render(request,"2factor/otp.html",{'id':uid})
+
+def patient_list(request):
+    return render(request, 'patients/list.html')
+
+
+def create_patient(request):
+    return render(request, 'patients/create.html')
+
+
+def edit_patient(request, pk):
+    return render(request, 'patients/edit.html')
+
+
+def delete_patient(request, pk):
+    return render(request, 'patients/delete.html')

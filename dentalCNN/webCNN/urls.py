@@ -11,5 +11,10 @@ urlpatterns = [
    #  twillio 
    path('register', views.register, name='register'),
    path('home', views.home, name='home'),
-   path('otp/<str:uid>/', views.otpVerify, name='otp')
+   path('otp/<str:uid>/', views.otpVerify, name='otp'),
+   #crud
+   path('view-patient', views.patient_list, name='patient-list'),
+   path('create/', views.create_patient, name='create-patient'),
+   path('edit/', views.edit_patient, name='edit-patient'),
+   path('delete/', views.delete_patient, name='delete-patient'),
  ]
