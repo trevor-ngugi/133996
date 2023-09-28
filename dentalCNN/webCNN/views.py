@@ -4,7 +4,7 @@ from django.contrib.auth import authenticate, login, logout
 from django.urls import reverse
 
 from django.contrib.auth.models import User
-from .models import Profile
+from .models import Profile,Patient
 import random
 from .helper import MessageHandler
 
@@ -82,7 +82,11 @@ def otpVerify(request,uid):
     return render(request,"2factor/otp.html",{'id':uid})
 
 def patient_list(request):
-    return render(request, 'patients/list.html')
+    patients = Patient.objects.all()
+    context = {
+        'patients': patients,
+    }
+    return render(request, 'patients/list.html',context)
 
 
 def create_patient(request):
@@ -90,8 +94,8 @@ def create_patient(request):
 
 
 def edit_patient(request, pk):
-    return render(request, 'patients/edit.html')
+    return render(request, 'patients/edit.html',context)
 
 
 def delete_patient(request, pk):
-    return render(request, 'patients/delete.html')
+    return render(request, 'patients/delete.html',context)
