@@ -8,6 +8,8 @@ from .models import Profile,Patient
 import random
 from .helper import MessageHandler
 
+from .forms import PatientForm
+
  # Create your views here.
 
 def index(request):
@@ -80,7 +82,7 @@ def otpVerify(request,uid):
             return HttpResponse("wrong otp")
         return HttpResponse("10 minutes passed")        
     return render(request,"2factor/otp.html",{'id':uid})
-
+#crud functions
 def patient_list(request):
     patients = Patient.objects.all()
     context = {
@@ -90,7 +92,18 @@ def patient_list(request):
 
 
 def create_patient(request):
-    return render(request, 'patients/create.html')
+    form = PatientForm()
+
+    if request.method == 'POST':
+        form = PatientForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('patient-list')
+
+    context = {
+        'form': form,
+    }
+    return render(request, 'patients/create.html',context)
 
 
 def edit_patient(request, pk):
