@@ -1,4 +1,4 @@
-from django.shortcuts import render,redirect
+from django.shortcuts import render,redirect,get_object_or_404
 from django.http import HttpResponse,HttpResponseRedirect
 from django.contrib.auth import authenticate, login, logout
 from django.urls import reverse
@@ -106,10 +106,25 @@ def create_patient(request):
     return render(request, 'patients/create.html',context)
 
 
-def edit_patient(request, pk):
-    patient = Patient.objects.get(name=pk)
-    form = PatientForm(instance=patient)
+# def edit_patient(request, pk):
+#     patient = Patient.objects.get(id=pk)
+#     form = PatientForm(instance=patient)
+    
+#     if request.method == 'POST':
+#         form = PatientForm(request.POST, instance=patient)
+#         if form.is_valid():
+#             form.save()
+#             return redirect('patient-list')
 
+#     context = {
+#         'patient': patient,
+#         'form': form,
+#     }
+#     return render(request, 'patients/edit.html',context)
+
+def edit_patient(request, pk):
+    patient = get_object_or_404(Patient, id=pk)
+    
     if request.method == 'POST':
         form = PatientForm(request.POST, instance=patient)
         if form.is_valid():
@@ -117,7 +132,7 @@ def edit_patient(request, pk):
             return redirect('patient-list')
 
     context = {
-        'employee': patient,
+        'patient': patient,
         'form': form,
     }
     return render(request, 'patients/edit.html',context)
