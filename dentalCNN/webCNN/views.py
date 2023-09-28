@@ -107,6 +107,19 @@ def create_patient(request):
 
 
 def edit_patient(request, pk):
+    patient = Patient.objects.get(name=pk)
+    form = PatientForm(instance=patient)
+
+    if request.method == 'POST':
+        form = PatientForm(request.POST, instance=patient)
+        if form.is_valid():
+            form.save()
+            return redirect('patient-list')
+
+    context = {
+        'employee': patient,
+        'form': form,
+    }
     return render(request, 'patients/edit.html',context)
 
 
