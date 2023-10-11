@@ -48,6 +48,16 @@ def registerstyle(request):
     
     return render(request, "users/registerNew.html")
 
+def loginhome(request):
+    return render(request, "users/logApp.html")
+
+def dentistProfile(request):
+    return render(request, "dentist/dProfile.html")
+
+def patientProfile(request):
+    return render(request, "patients/pProfile.html")
+
+
 def logout_view(request):
     logout(request)
     return render(request, "users/login.html", {

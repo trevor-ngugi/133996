@@ -10,6 +10,9 @@ urlpatterns = [
    #new login style format
    path("loginnew", views.loginstyle, name="login_style"),
    path("registernew", views.registerstyle, name="register_style"),
+   path("loginhome", views.loginhome, name="login_home"),
+   path("dentist-profile", views.dentistProfile, name="dentist_profile"),
+   path("patient-profile", views.patientProfile, name="patient_profile"),
     #  path("login-page",views.login,name="login-page")
    #  twillio 
    path('register', views.register, name='register'),
