@@ -60,6 +60,9 @@ def patientProfile(request):
 def updateProfile(request):
     return render(request, "world/updateProfle.html")
 
+def homeNew(request):
+    return render(request, "home/home.html")
+
 
 def logout_view(request):
     logout(request)
