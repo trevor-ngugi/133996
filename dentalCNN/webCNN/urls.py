@@ -7,6 +7,8 @@ urlpatterns = [
     #  path("homepage", views.homepage, name="home"),
    path("login", views.login_view, name="login"),
    path("logout", views.logout_view, name="logout"),
+   #new login style format
+   path("loginnew", views.loginstyle, name="login_style"),
     #  path("login-page",views.login,name="login-page")
    #  twillio 
    path('register', views.register, name='register'),

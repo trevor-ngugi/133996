@@ -38,6 +38,11 @@ def login_view(request):
             })
     return render(request, "users/login.html")
 
+def loginstyle(request):
+    # If no user is signed in, return to login page:
+    
+    return render(request, "users/loginNew.html")
+
 def logout_view(request):
     logout(request)
     return render(request, "users/login.html", {
