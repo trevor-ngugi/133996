@@ -57,6 +57,9 @@ def dentistProfile(request):
 def patientProfile(request):
     return render(request, "patients/pProfile.html")
 
+def updateProfile(request):
+    return render(request, "world/updateProfle.html")
+
 
 def logout_view(request):
     logout(request)
