@@ -63,6 +63,12 @@ def updateProfile(request):
 def homeNew(request):
     return render(request, "home/home.html")
 
+def scanImages(request):
+    return render(request, "world/scan.html")
+
+def prediction(request):
+    return render(request, "world/prediction.html")
+
 
 def logout_view(request):
     logout(request)

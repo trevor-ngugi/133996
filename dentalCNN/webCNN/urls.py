@@ -15,6 +15,8 @@ urlpatterns = [
    path("patient-profile", views.patientProfile, name="patient_profile"),
    path("update-profile", views.updateProfile, name="update_profile"),
    path("home-new", views.homeNew, name="home_new"),
+   path("scan-images", views.scanImages, name="scan_images"),
+   path("prediction", views.prediction, name="prediction"),
     #  path("login-page",views.login,name="login-page")
    #  twillio 
    path('register', views.register, name='register'),
