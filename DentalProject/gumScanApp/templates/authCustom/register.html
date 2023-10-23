@@ -11,7 +11,7 @@
 {% block body %}
     <h1> registration details</h1>
     <div class="container">
-        <form>
+        <!-- <form>
             <div class="input-group">
                 <span class="input-group-text">First and last name</span>
                 <input type="text" aria-label="First name" class="form-control">
@@ -41,7 +41,14 @@
               </div>
             
             <button type="submit" class="btn btn-primary">Submit</button>
-          </form>
+          </form> -->
+          <form method="post">
+            {% csrf_token %}
+    
+            {{ form.as_p }}
+    
+            <button type="submit">Register</button>
+        </form>
     </div>
     
     
