@@ -2,6 +2,7 @@ from django.shortcuts import render,redirect
 from django.http import HttpResponse
 from .forms import RegistrationForm,LoginForm,PatientForm
 from django.contrib.auth import login,authenticate,logout
+from .models import Patient
 # Create your views here.
 
 def index(request):
@@ -48,3 +49,7 @@ def add_patient(request):
     else:
         form = PatientForm()
     return render(request, "home/addPatient.html", {'form': form})
+
+def view_patients(request):
+    patients = Patient.objects.all()
+    return render(request, 'home/viewPatient.html', {'patients': patients})

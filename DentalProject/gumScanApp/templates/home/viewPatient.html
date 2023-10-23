@@ -1,0 +1,22 @@
+{% extends "home/hLayout.html" %} 
+{% load static %} 
+{% block title %}
+<title>view patients</title>
+{% endblock title %} 
+{% block styles %}
+<link
+  rel="stylesheet"
+  href="{% static 'webstyles/home.css' %}"
+/>
+{% endblock %} 
+{% block body %}
+<div class="content">
+    <h1>All patients</h1>
+    <ul>
+        {% for user in patients %}
+            <li>{{ user.first_name }} - {{ user.email }}</li>
+        {% endfor %}
+    </ul>
+</div>
+
+{% endblock %}
