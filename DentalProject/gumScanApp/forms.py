@@ -6,3 +6,7 @@ class RegistrationForm(UserCreationForm):
     class Meta:
         model = CustomUser
         fields = ('first_name', 'last_name', 'date_of_birth', 'email', 'role', 'username', 'password1', 'password2')
+
+class LoginForm(forms.Form):
+    username = forms.CharField()
+    password = forms.CharField(widget=forms.PasswordInput)
