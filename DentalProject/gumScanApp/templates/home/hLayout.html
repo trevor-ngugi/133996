@@ -19,7 +19,9 @@
         <a href="#">gumscan</a>
         <a href="#patient">home</a>
         <a href="#view">profile</a>
-        <a href="#scan">logout</a>
+        {% if user.is_authenticated %}
+        <a href="{% url 'logout' %}">logout</a>
+        {% endif %}
         
     </div>
     <div class="sidebar">

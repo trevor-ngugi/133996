@@ -34,3 +34,7 @@ def login_request(request):
 
 def home(request):
     return render(request, "home/home.html")
+
+def user_logout(request):
+    logout(request)
+    return redirect('index') 
