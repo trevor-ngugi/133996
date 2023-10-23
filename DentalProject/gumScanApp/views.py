@@ -7,3 +7,6 @@ def index(request):
 
 def register(request):
     return render(request, "authCustom/register.html")
+
+def login(request):
+    return render(request, "authCustom/login.html")
