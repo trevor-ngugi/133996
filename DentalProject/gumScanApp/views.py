@@ -1,6 +1,6 @@
 from django.shortcuts import render,redirect
 from django.http import HttpResponse
-from .forms import RegistrationForm,LoginForm
+from .forms import RegistrationForm,LoginForm,PatientForm
 from django.contrib.auth import login,authenticate,logout
 # Create your views here.
 
@@ -38,3 +38,13 @@ def home(request):
 def user_logout(request):
     logout(request)
     return redirect('index') 
+
+def add_patient(request):
+    if request.method == 'POST':
+        form = PatientForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('home')  
+    else:
+        form = PatientForm()
+    return render(request, "home/addPatient.html", {'form': form})
