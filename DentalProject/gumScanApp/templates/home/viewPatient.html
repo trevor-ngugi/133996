@@ -14,7 +14,7 @@
     <h1>All patients</h1>
     <ul>
         {% for user in patients %}
-            <li>{{ user.first_name }} - {{ user.email }}</li>
+            <li>{{ user.first_name }} - {{ user.email }}---- <a style="margin-right: 30px;" href="{% url 'edit-patient' user.id  %}">Edit</a></li>
         {% endfor %}
     </ul>
 </div>
