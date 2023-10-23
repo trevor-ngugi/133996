@@ -1,0 +1,27 @@
+h1 {
+    font-family: sans-serif;
+    font-size: 90px;
+    text-align: center;
+}
+
+.col{
+    background-color: #3da9fc;
+  width: 300px;
+  color: red;
+  
+  padding: 50px;
+  margin: 20px;
+}
+
+h2{
+    text-align: center;
+    color: red
+   
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; 
+}
