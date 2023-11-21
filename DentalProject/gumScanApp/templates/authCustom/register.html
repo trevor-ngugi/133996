@@ -1,56 +1,64 @@
-{% extends "authCustom/layout.html" %}
-{% load static %}
-{% block title %}
-    <title>registration</title>
-{% endblock title %}
+{% extends "authCustom/layout.html" %} {% load static %} {% block title %}
+<title>registration</title>
+{% endblock title %} {% block styles %}
+<link rel="stylesheet" href="{% static 'webstyles/login.css' %}" />
+{% endblock %} {% block body %}
+<h1>Registration Details</h1>
+<div class="container">
+  <div class="card">
+    <div class="card-body">
 
-{% block styles %}
-        <link rel="stylesheet" href="{% static 'webstyles/login.css' %}">
-{% endblock  %}
+      <form method="post" class="form-container">
+        {% csrf_token %}
 
-{% block body %}
-    <h1> registration details</h1>
-    <div class="container">
-        <!-- <form>
-            <div class="input-group">
-                <span class="input-group-text">First and last name</span>
-                <input type="text" aria-label="First name" class="form-control">
-                <input type="text" aria-label="Last name" class="form-control"><br>
-              </div>
-              <div class="input-group mb-3">
-                <span class="input-group-text" id="inputGroup-sizing-default">Date of birth</span>
-                <input type="date" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
-              </div>
-            <div class="mb-3">
-              <label for="exampleInputEmail1" class="form-label">Email address</label>
-              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-              <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
-            </div>
-            <div class="mb-3">
-              <label for="exampleInputPassword1" class="form-label">Password</label>
-              <input type="password" class="form-control" id="exampleInputPassword1">
-            </div>
-            <select class="form-select" aria-label="Default select example">
-                <option selected>type of user</option>
-                <option value="1">patient</option>
-                <option value="2">dentist</option>
-            </select>
-            <div class="input-group mb-3">
-                <input type="text" class="form-control" placeholder="licenses" aria-label="Username">
-                
-              </div>
-            
-            <button type="submit" class="btn btn-primary">Submit</button>
-          </form> -->
-          <form method="post">
-            {% csrf_token %}
-    
-            {{ form.as_p }}
-    
-            <button type="submit">Register</button>
-        </form>
+        <div class="form-group">
+          <label for="{{ form.first_name.id_for_label }}">First Name:</label>
+          {{ form.first_name }}
+        </div>
+
+        <div class="form-group">
+          <label for="{{ form.last_name.id_for_label }}">Last Name:</label>
+          {{ form.last_name }}
+        </div>
+
+        <div class="form-group">
+          <label for="{{ form.date_of_birth.id_for_label }}">Date of Birth:</label>
+          {{ form.date_of_birth }}
+        </div>
+
+        <div class="form-group">
+          <label for="{{ form.email.id_for_label }}">Email:</label>
+          {{ form.email }}
+        </div>
+
+        
+
+        <div class="form-group">
+          <label for="{{ form.username.id_for_label }}">Username:</label>
+          {{ form.username }}
+        </div>
+
+        <div class="form-group">
+          <label for="{{ form.role.id_for_label }}">Role:</label>
+          {{ form.role }}
+        </div>
+
+        <div class="form-group">
+          <label for="{{ form.password1.id_for_label }}">Password:</label>
+          {{ form.password1 }}
+        </div>
+
+        <div class="form-group">
+          <label for="{{ form.password2.id_for_label }}">Confirm Password:</label>
+          {{ form.password2 }}
+        </div>
+
+        <button type="submit" class="submit-button">Register</button>
+      </form>
+
     </div>
-    
-    
-    
+  </div>
+</div>
+</div>
+
 {% endblock %}

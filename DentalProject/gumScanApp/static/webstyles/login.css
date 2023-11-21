@@ -1,16 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@500&display=swap');
+
 h1 {
-    font-family: sans-serif;
+    font-family: "rubik";
     font-size: 90px;
     text-align: center;
 }
 
 .col{
-    background-color: #3da9fc;
-  width: 300px;
-  color: red;
-  
-  padding: 50px;
-  margin: 20px;
+    background-color: white;
+    width: 300px;
+    color: red;
+    padding: 100px;
+    margin: 20px;
+    
+    
 }
 
 h2{
@@ -24,4 +27,47 @@ body{
     justify-content: center;
     align-items: center;
     height: 100vh; 
+    background-color: #D8EEFE;
+    
+}
+
+/* form css */
+/* styles.css */
+
+/* Add your custom styles here */
+.form-container {
+    max-width: 400px;
+    margin: auto;
+}
+
+/* Style the form fields */
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+}
+
+.submit-button {
+    background-color: #3DA9FC;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* image css */
+.img{
+    width: 100%;  /* Set the dimensions of the image to match the card */
+    height: 100%;
+    object-fit: cover;
 }

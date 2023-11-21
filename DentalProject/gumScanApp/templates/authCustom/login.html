@@ -9,30 +9,33 @@
 {% endblock  %}
 
 {% block body %}
-<h1> login details</h1>
+<h1> Login User</h1>
+
 <div class="container">
-    <!-- <form>
-        
-          
-        <div class="mb-3">
-          <label for="exampleInputEmail1" class="form-label">Email address</label>
-          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-          <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
-        </div>
-        <div class="mb-3">
-          <label for="exampleInputPassword1" class="form-label">Password</label>
-          <input type="password" class="form-control" id="exampleInputPassword1">
-        </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
-      </form> -->
-      <form method="post">
-        {% csrf_token %}
+    <div class="card">
+      <div class="card-body">
+  
+        <form method="post" class="form-container">
+          {% csrf_token %}
 
-        {{ form.as_p }}
+          <div class="form-group">
+            <label for="{{ form.username.id_for_label }}">Username:</label>
+            {{ form.username }}
+          </div>
 
-        <button type="submit">Login</button>
-    </form>
+          <div class="form-group">
+            <label for="{{ form.password.id_for_label }}">Password:</label>
+            {{ form.password }}
+          </div>
+
+          <button type="submit" class="submit-button">Login</button>
+        </form>
+  
+      </div>
+    </div>
+    
 </div>
+<img src="{% static 'images/login.png' %}">
     
     
     
